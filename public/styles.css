@@ -1,3 +1,74 @@
-body {
+body, h1 {
   margin: 0;
+}
+
+#homeview {
+  background-image: url('./images/confroom.jpg');
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+header {
+  position: fixed;
+  top: 20px;
+  width: 100vw;
+  height: max-content;
+  z-index: 100;
+  text-align: center;
+}
+
+#headtitle {
+  font-family: 'Satisfy';
+  font-size: 50px;
+  width: 100vw;
+  text-align: center;
+  text-shadow: 1px 1px #fff;
+}
+
+#mainlogo {
+  font-size: 50px;
+  margin: 11px;
+  height: max-content;
+  width: max-content;
+}
+
+#homelogo {
+  font-size: 200px;
+  color: #56f70c;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: max-content;
+  width: max-content;
+  font-weight: bolder;
+  text-shadow: -1px 1px #000;
+}
+#getstarted {
+  background-color: #fff;
+  height: 130px;
+  width: 130px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 65px;
+}
+
+#homeexplain {
+  height: max-content;
+  width: max-content;
+  font-family: 'Satisfy';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 50px;
+  margin: auto;
 }

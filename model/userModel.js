@@ -5,9 +5,10 @@ var meetingModel = require('./../model/meetingModel');
 
   var User = new mongoose.Schema({
       password: {type: String, required: true },
-      firstname: {type: String},
-      lastname: {type: String},
-      email: {type: String, required: true}
+      firstname: {type: String, required: true},
+      lastname: {type: String, required: true},
+      email: {type: String, required: true},
+      meetings: [{type: mongoose.Schema.Types.ObjectId, ref: "Meeting"}]
   });
 
   User.methods.generateHash = function(password) {

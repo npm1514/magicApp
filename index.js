@@ -25,22 +25,23 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(express.static(__dirname + '/public'));
 
-app.post('/auth', passport.authenticate('local-signup'), function(req, res){
-  res.send();
-});
+app.post(
+  '/login',
+  passport.authenticate('local-signup'),
+  userCtrl.login
+);
 
-app.post('/user', userCtrl.create);
-app.get('/user/me', userCtrl.getme);
-app.get('/user/logout', userCtrl.logout);
-app.get('/user/:id', userCtrl.read);
-app.put('/user/:id', userCtrl.update);
-app.delete('/user/:id', userCtrl.delete);
+app.get('/users', userCtrl.read);
+app.get('/me', userCtrl.getme);
+app.get('/logout', userCtrl.logout);
+app.put('/users/:id', userCtrl.update);
+app.delete('/users/:id', userCtrl.delete);
 
-app.get('/meeting',meetingCtrl.read);
-app.get('/meeting/:id', meetingCtrl.getOne);
-app.post('/meeting',meetingCtrl.create);
-app.put('/meeting',meetingCtrl.update);
-app.delete('/meeting',meetingCtrl.delete);
+app.get('/meetings',meetingCtrl.read);
+app.get('/meetings/:id', meetingCtrl.getOne);
+app.post('/meetings',meetingCtrl.create);
+app.put('/meetings/:id',meetingCtrl.update);
+app.delete('/meetings/:id',meetingCtrl.delete);
 
 var mongoUri = 'mongodb://'+config.userDB+':'+config.passDB+'@ds117929.mlab.com:17929/magicapp';
 mongoose.connect(mongoUri);
@@ -48,7 +49,6 @@ mongoose.connection.on('error', console.error.bind(console, 'connection error'))
 mongoose.connection.once('open', function(){
   console.log("Connected to mongoDB");
 });
-
 
 app.listen(3000, function(){
   console.log("running on 3000");
