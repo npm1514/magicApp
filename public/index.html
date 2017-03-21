@@ -10,9 +10,11 @@
   </head>
   <body ng-controller="mainCtrl" ng-cloak>
     <header>
-      <h1 id="headtitle">
-        <i class="fa fa-superpowers" id="mainlogo"></i>magic app
-      </h1>
+      <a ui-sref="home">
+        <h1 id="headtitle">
+          <i class="fa fa-superpowers" id="mainlogo"></i>magic app
+        </h1>
+      </a>
     </header>
     <ui-view></ui-view>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>

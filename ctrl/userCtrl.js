@@ -6,6 +6,7 @@ module.exports = {
     res.send();
   },
   read: function(req, res) {
+    console.log(req.query);
     userModel
     .find(req.query)
     .populate('meetings')

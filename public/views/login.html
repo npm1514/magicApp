@@ -1,0 +1,17 @@
+<div id="loginview">
+  <form ng-hide="emailverified" ng-submit="checkemail(loginemail)">
+    <input id="emailinput" ng-model="loginemail" type="email" placeholder="email address">
+  </form>
+  <form ng-show="emailverified" ng-submit="login(loginpassword)">
+    <input id="passwordinput" ng-model="loginpassword" type="password" placeholder="password">
+  </form>
+  <!-- <form ng-submit="checkemail(loginemail)">
+    <input id="passwordinput" ng-model="loginemail" type="password" placeholder="email address">
+    <input id="passwordinput" ng-model="loginemail" type="password" placeholder="email address">
+    <input id="passwordinput" ng-model="loginemail" type="password" placeholder="email address">
+    <input id="passwordinput" ng-model="loginemail" type="password" placeholder="email address">
+    <input id="passwordinput" ng-model="loginemail" type="password" placeholder="email address">
+    <input id="passwordinput" ng-model="loginemail" type="password" placeholder="email address">
+    <input type="submit" name="" value="">
+  </form> -->
+</div>
