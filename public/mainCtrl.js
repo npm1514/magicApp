@@ -1,10 +1,4 @@
 angular.module('magicApp').controller('mainCtrl', function($scope, $state, mainServ){
-  $scope.wrongpassword,
-  $scope.nopasswordmatch,
-  $scope.emailverified,
-  $scope.passwordtime,
-  $scope.registeraccount,
-  $scope.loggedinuser;
   $scope.checkemail = function(email){
     $scope.emailtologin = email;
     mainServ.checkemail(email)
@@ -28,22 +22,21 @@ angular.module('magicApp').controller('mainCtrl', function($scope, $state, mainS
         $scope.wrongpassword = true;
         $scope.loginpassword = "";
       } else {
-        $scope.getMe();
         $state.go("profile");
+        $scope.getMe();
       }
-    })
-  }
-  $scope.register = function(registeruser){
-    if(registeruser.password != $scope.password2){
+    });
+  };
+  $scope.register = function(registeruser, p2){
+    if(registeruser.password != p2){
       $scope.nopasswordmatch = true;
-      $scope.registeruser.password = "";
       $scope.password2 = "";
     } else {
       registeruser.email = $scope.emailtologin;
       mainServ.login(registeruser)
       .then(function(res){
-        $scope.getMe();
         $state.go('profile');
+        $scope.getMe();
         $scope.emailverified = false;
       });
     }
@@ -52,11 +45,14 @@ angular.module('magicApp').controller('mainCtrl', function($scope, $state, mainS
     mainServ.getMe()
     .then(function(res){
       $scope.loggedinuser = res.data;
-      console.log($scope.loggedinuser);
-
       $scope.emailverified = false;
     });
   };
-
-
+  $scope.funstart = function(){
+    document.getElementById('homelogo').style.transform = "rotate(360deg)";
+    document.getElementById('homelogo').style.transition = "transform 1s linear";
+    setTimeout(function(){
+      $state.go('login');
+    },1000);
+  };
 });

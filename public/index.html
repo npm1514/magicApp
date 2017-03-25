@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina|Jim+Nightshade|Oswald|Satisfy|Shadows+Into+Light" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
-  <body ng-controller="mainCtrl" ng-cloak>
+  <body>
     <header>
       <a ui-sref="home">
         <h1 id="headtitle">
@@ -16,7 +16,7 @@
         </h1>
       </a>
     </header>
-    <ui-view></ui-view>
+    <ui-view ng-controller="mainCtrl"></ui-view>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
     <script src="./app.js"></script>
