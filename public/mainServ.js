@@ -25,5 +25,22 @@ angular.module('magicApp').service('mainServ', function($http){
     }).then(function(res){
       return res;
     })
+  };
+  this.logout = function(){
+    return $http({
+      method: "GET",
+      url: "/logout"
+    }).then(function(res){
+      return res;
+    });
+  };
+  this.putMe = function(user){
+    return $http({
+      method: "PUT",
+      url: "user/" + user._id,
+      data: user
+    }).then(function(res){
+      return res;
+    })
   }
 });

@@ -1,5 +1,29 @@
-<div id="profileview">
-  <div class="spacer"></div>
-  <h1>{{loggedinuser.firstname}} {{loggedinuser.lastname}}</h1>
-  <h1>{{loggedinuser.email}}</h1>
+<div class="desktopcontainer">
+  <div id="profileview" ng-if="loggedinuser">
+    <button type="button" ng-click="logout()" ng-show="loggedin" id="logout" >Logout</button>
+    <div class="spacer"></div>
+    <br>
+    <h1>{{loggedinuser.firstname}} {{loggedinuser.lastname}}</h1>
+    <h1>{{loggedinuser.email}}</h1>
+    <br>
+    <hr>
+    <br>
+    <h1>Calendar of Events</h1>
+    <a ui-sref="addMeeting" style="color: #fff; margin: 5px"><h3><i class="fa fa-plus"></i>Add New Meeting</h3></a>
+    <br>
+    <hr>
+    <div class="eventprofile">
+      <a ui-sref="#" ng-repeat="meeting in loggedinuser.meetings">
+        <div class="eventprofilecard">
+          <p>Friday</p>
+          <h1>31</h1>
+          <h3>10:00-11:00</h3>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="notallowed" ng-if="!loggedinuser">
+    <div class="spacer"></div>
+    <h1>Sorry, You Do Not Have Access to This Page, Please <a ui-sref="login">Login</a></h1>
+  </div>
 </div>

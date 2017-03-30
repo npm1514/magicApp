@@ -1,21 +1,23 @@
-<div id="loginview">
-  <form ng-hide="emailverified" ng-submit="checkemail(loginemail); emailverified=true">
-    <input id="emailinput" ng-model="loginemail" type="email" placeholder="email address">
-  </form>
+<div class="desktopcontainer">
+  <div id="loginview">
+    <form ng-hide="emailverified" ng-submit="checkemail(loginemail); emailverified=true">
+      <input id="emailinput" ng-model="loginemail" type="email" placeholder="email address">
+    </form>
 
-  <form ng-show="passwordtime" ng-submit="login(loginpassword)">
-    <input id="passwordinput" ng-focus="wrongpassword=false" ng-model="loginpassword" type="password" placeholder="password">
-    <h1 class="notifylogin" ng-show="wrongpassword">Sorry, your password is incorrect.</h1>
-  </form>
+    <form ng-show="passwordtime" ng-submit="login(loginpassword); loginpassword=''">
+      <input id="passwordinput" ng-model="loginpassword" type="password" placeholder="password">
+      <h1 class="notifylogin" id="wrongpassword" ng-show="wrongpassword">Sorry, your password is incorrect.</h1>
+    </form>
 
-  <form ng-show="registeraccount" ng-submit="register(registeruser, password2)">
-    <h1>Please Register a New Account</h1>
-    <input ng-model="registeruser.firstname" type="text" placeholder="First Name"/>
-    <input ng-model="registeruser.lastname" type="text" placeholder="Last Name"/>
-    <input ng-model="registeruser.password" ng-focus="nopasswordmatch=false" type="password" placeholder="Password"/>
-    <input ng-model="password2" ng-focus="nopasswordmatch=false" type="password" placeholder="Retype Password"/>
-    <input type="submit">
-    <h1 ng-show="nopasswordmatch">Sorry, your passwords do not match. Please adjust and try again.</h1>
-  </form>
 
+    <form ng-show="registeraccount" ng-submit="register(registeruser, password2)">
+      <h1>Please Register a New Account</h1>
+      <input ng-model="registeruser.firstname" type="text" placeholder="First Name"/>
+      <input ng-model="registeruser.lastname" type="text" placeholder="Last Name"/>
+      <input ng-model="registeruser.password" ng-focus="nopasswordmatch=false" type="password" placeholder="Password"/>
+      <input ng-model="password2" ng-focus="nopasswordmatch=false" type="password" placeholder="Retype Password"/>
+      <input type="submit">
+      <h1 ng-show="nopasswordmatch">Sorry, your passwords do not match. Please adjust and try again.</h1>
+    </form>
+  </div>
 </div>

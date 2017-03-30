@@ -8,15 +8,15 @@
     <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina|Jim+Nightshade|Oswald|Satisfy|Shadows+Into+Light" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
-  <body>
+  <body ng-controller="mainCtrl" ng-cloak>
     <header>
-      <a ui-sref="home">
-        <h1 id="headtitle">
-          <i class="fa fa-superpowers" id="mainlogo"></i>magic app
-        </h1>
-      </a>
+      <h1 id="headtitle">
+        <a ui-sref="home">
+        <i class="fa fa-superpowers" id="mainlogo"></i>magic app
+        </a>
+      </h1>
     </header>
-    <ui-view ng-controller="mainCtrl"></ui-view>
+    <ui-view></ui-view>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
     <script src="./app.js"></script>

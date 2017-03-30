@@ -1,0 +1,21 @@
+<div class="desktopcontainer">
+  <div id="addmeetingview">
+    <div class="spacer"></div>
+    <br>
+    <h1>Add a New Meeting</h1>
+    <hr>
+    <form ng-submit="addMeeting(newmeeting)">
+      <input ng-model="newmeeting.title" type="text" placeholder="Meeting Title"/>
+      <input ng-model="newmeeting.timestart" type="text" placeholder="Start Time"/>
+      <input ng-model="newmeeting.timeend" type="text" placeholder="End Time"/>
+      <input ng-model="newmeeting.date" type="date"/>
+      <button type="button" ng-click="addcallin = true">Add Call In Info</button>
+      <div ng-show="addcallin">
+        <input ng-model="newmeeting.callin.phone" type="text" placeholder="Phone Number"/>
+        <input ng-model="newmeeting.callin.access" type="text" placeholder="Access Code"/>
+        <input ng-model="newmeeting.callin.pin" type="text" placeholder="Pin Number"/>
+      </div>
+      <input type="submit">
+    </form>
+  </div>
+</div>

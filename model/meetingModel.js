@@ -9,4 +9,4 @@ var Meeting = new mongoose.Schema({
     accesscode: Number
 });
 
-module.exports = mongoose.model('Meeting', Meeting);
+module.exports = Meeting;

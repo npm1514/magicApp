@@ -1,4 +1,4 @@
-body, h1 {
+body, h1, p, h3 {
   margin: 0;
   text-align: center;
 }
@@ -17,19 +17,23 @@ a {
 }
 
 header {
-  position: fixed;
+  position: absolute;
   top: 20px;
+  left: 0;
+  right: 0;
   width: 100vw;
+  max-width: 600px;
   height: max-content;
   z-index: 100;
   text-align: center;
   background-color: rgba(255,255,255,0.5);
+  margin: auto;
 }
 
 #headtitle {
   font-family: 'Satisfy';
   font-size: 50px;
-  width: 100vw;
+  width: 100%;
   text-align: center;
   text-shadow: 1px 1px #fff;
 }
@@ -83,14 +87,24 @@ header {
   margin: auto;
 }
 
-#loginview {
+#loginview, #profileview, #addmeetingview, #meetingview, .notallowed {
   background-color: rgb(52, 67, 91);
   color: #fff;
-  height: 100vh;
-  width: 100vw;
+  height: max-content;
+  min-height: 100vh;
+  width: 100%;
+  font-family: 'Satisfy';
+}
+#loginview {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+}
+.notallowed {
+  background-image: url('https://images.unsplash.com/photo-1428591850870-56971c19c3d9?dpr=2&auto=compress,format&fit=crop&w=376&h=251&q=80&cs=tinysrgb&crop=');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 input {
   background-color: rgb(52, 67, 91);
@@ -103,6 +117,10 @@ input {
   padding: 10px;
   overflow: visible;
 }
+input[type=date]{
+  text-align: right;
+  padding-right: 75px;
+}
 input:focus{
   outline: none;
 }
@@ -112,12 +130,70 @@ input:focus{
   left: 0;
   right: 0;
   margin: auto;
-}
-#profileview {
-  height: 100vh;
-  width: 100vw;
+  z-index: 100;
 }
 .spacer {
   height: 100px;
+  width: 100%;
+}
+button {
+  background-color: rgb(52, 67, 91);
+  color:  rgb(117,117,117);
+  font-size: 40px;
+  width: max-content;
+  min-width: 500px;
+  text-align: center;
+  border-width: 0 0 .5px 0;
+  padding: 5px;
+  overflow: visible;
+}
+button:hover {
+  cursor: pointer;
+}
+#logout {
+  position: absolute;
+  top: 31px;
+  right: 10px;
+  z-index: 150;
+  min-width: 100px;
+  width: max-content;
+}
+.desktopcontainer {
+  display: block;
   width: 100vw;
+  max-width: 600px;
+  height: max-content;
+  margin: auto;
+}
+.eventprofile {
+  width: 100%;
+  height: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.eventprofilecard {
+  width: 100px;
+  height: 100px;
+  padding-top: 2px;
+  background-color: rgba(255,255,255, 1);
+  border: 0.5px solid #8d8d8d;
+  color: #000;
+  margin: 5px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 600px){
+  .desktopcontainer, header {
+    width: 100vw;
+  }
+}
+@media (max-device-width: 100vw){
+  .desktopcontainer, header {
+    width: 100vw;
+    max-width: 100vw;
+  }
 }

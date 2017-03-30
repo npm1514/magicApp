@@ -5,7 +5,6 @@ var passport = require('passport');
 var session = require('express-session');
 var mongoose = require('mongoose');
 
-var meetingCtrl = require('./ctrl/meetingCtrl');
 var userCtrl = require('./ctrl/userCtrl');
 var config = require('./config/config')
 
@@ -36,12 +35,6 @@ app.get('/me', userCtrl.getme);
 app.get('/logout', userCtrl.logout);
 app.put('/users/:id', userCtrl.update);
 app.delete('/users/:id', userCtrl.delete);
-
-app.get('/meetings',meetingCtrl.read);
-app.get('/meetings/:id', meetingCtrl.getOne);
-app.post('/meetings',meetingCtrl.create);
-app.put('/meetings/:id',meetingCtrl.update);
-app.delete('/meetings/:id',meetingCtrl.delete);
 
 var mongoUri = 'mongodb://'+config.userDB+':'+config.passDB+'@ds117929.mlab.com:17929/magicapp';
 mongoose.connect(mongoUri);

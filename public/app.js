@@ -9,9 +9,12 @@ angular.module('magicApp',['ui.router']).config(function($urlRouterProvider, $st
     }).state('profile',{
         url: '/profile',
         templateUrl: './views/profile.html'
-    }).state('calendar',{
-        url: '/calendar',
-        templateUrl: './views/calendar.html'
+    }).state('meeting',{
+        url: '/meeting/:id',
+        templateUrl: './views/meeting.html'
+    }).state('addMeeting',{
+        url: '/addMeeting',
+        templateUrl: './views/addMeeting.html'
     });
 
     $urlRouterProvider.otherwise('/');
